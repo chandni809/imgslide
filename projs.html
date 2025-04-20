@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Color Picker</title>
+</head>
+<body style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; font-family: sans-serif;">
+
+  <h1> Color Picker</h1>
+  <div id="colorBox" style="width: 200px; height: 200px; border: 2px solid #333; margin: 20px; background-color: #ffffff;"></div>
+  
+  <p>Color Code: <span id="colorCode">#ffffff</span></p>
+  
+  <button onclick="pickColor()" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+    Pick Random Color
+  </button>
+
+  <script>
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    function pickColor() {
+      const newColor = getRandomColor();
+      document.getElementById('colorBox').style.backgroundColor = newColor;
+      document.getElementById('colorCode').textContent = newColor;
+      document.body.style.backgroundColor = newColor + "22"; // light tint in background
+    }
+  </script>
+
+</body>
+</html>
