@@ -1,1 +1,1 @@
-# imgslide
+# colorslide
